@@ -15,14 +15,10 @@ const Contact = () => {
 
     try {
       const res = await fetch("/api/anon-message", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({ message })
-});
-
-  
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message }),
+      });
 
       const data = await res.json();
 
@@ -51,25 +47,36 @@ const Contact = () => {
       id="kontak"
       className="py-20 bg-dark-200"
     >
-      <div className="container mx-auto px-6">
-        <h2 className="text-center text-2xl font-bold mb-18 text-primary">
-          Kirim Pesan
+      <div className="container mx-auto px-6 max-w-3xl">
+        
+        {/* Title */}
+        <h2 className="text-center text-3xl font-bold mb-12 text-primary tracking-wide">
+          Kirim Pesan Anonim
         </h2>
 
-        <div className="max-w-3xl mx-auto">
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-9">
-            <div className="flex flex-col">
-              <label className="text-gray-300 mb-4 text-xl font-medium">
-                Kirim pesan anonim :
+        {/* Form Card */}
+        <div className="bg-dark-300 p-8 rounded-2xl shadow-xl border border-dark-100/20">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            
+            {/* Textarea */}
+            <div>
+              <label className="text-gray-300 mb-3 block text-lg font-semibold">
+                Pesan kamu
               </label>
 
               <textarea
-                rows="10"
-                placeholder="Tulis pesan..."
+                rows="8"
+                placeholder="Tulis pesanmu di sini..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="bg-dark-400 p-6 text-xl rounded-2xl text-gray-200 
-                  focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                className="
+                  bg-dark-400 w-full p-5 text-lg rounded-xl text-gray-200
+                  placeholder-gray-500
+                  outline-none border border-dark-100/30
+                  focus:border-primary focus:ring-1 focus:ring-primary
+                  transition-all duration-200
+                  resize-none
+                "
               ></textarea>
             </div>
 
@@ -77,22 +84,32 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex justify-center items-center gap-4 
-                  bg-primary px-14 py-5 rounded-2xl text-xl font-semibold 
-                  hover:bg-primary/70 transition disabled:opacity-50"
+                className="
+                  inline-flex items-center justify-center gap-3
+                  bg-primary px-10 py-4 rounded-xl text-lg font-semibold 
+                  hover:bg-primary/70 transition
+                  disabled:opacity-50 disabled:cursor-not-allowed
+                "
               >
-                {loading ? "Mengirim..." : "Kirim Pesan"}{" "}
-                <FaPaperPlane size={26} />
+                {loading ? "Mengirim..." : "Kirim Pesan"}
+                <FaPaperPlane size={20} />
               </button>
 
+              {/* Success message */}
               {success && (
-                <p className="text-green-400 mt-4 text-lg">
-                  Pesan berhasil dikirim!
-                </p>
+                <motion.p
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="text-green-400 mt-5 text-base font-medium"
+                >
+                  ✓ Pesan berhasil dikirim!
+                </motion.p>
               )}
             </div>
           </form>
         </div>
+
       </div>
     </motion.div>
   );

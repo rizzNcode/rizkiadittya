@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
     await resend.emails.send({
       from: "Anon Message <no-reply@yourdomain.com>",
-      to: "rizz9575@gmail.com",
+      to: "rizz9579@gmail.com",
       subject: "Pesan Anonim Baru Masuk!",
       html: `
         <h3>Ada pesan anonim baru 👀</h3>

@@ -1,9 +1,5 @@
 import { Resend } from "resend";
 
-export const config = {
-  runtime: "nodejs", // ✔ gunakan "nodejs"
-};
-
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Only POST allowed" });
@@ -12,21 +8,13 @@ export default async function handler(req, res) {
   try {
     const { message } = req.body;
 
-    if (!message) {
-      return res.status(400).json({ message: "Message missing" });
-    }
-
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
       from: "Anon Message <onboarding@resend.dev>",
       to: "rizz9579@gmail.com",
       subject: "Pesan Anonim Baru Masuk!",
-      html: `
-        <h3>Ada pesan anonim baru 👀</h3>
-        <p>${message}</p>
-        <small>Dikirim pada ${new Date().toLocaleString()}</small>
-      `,
+      html: `<p>${message}</p>`,
     });
 
     return res.status(200).json({ success: true });

@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 export const config = {
-  runtime: "nodejs18.x",
+  runtime: "nodejs",
 };
 
 export default async (req, res) => {

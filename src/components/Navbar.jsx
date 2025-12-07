@@ -7,15 +7,14 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("#home");
   const handleSectionClick = (href) => {
     setActiveSection(href);
-    setShowMenu(false); 
-    if (href.startsWith('#')) {
-        const element = document.getElementById(href.substring(1));
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+    setShowMenu(false);
+    if (href.startsWith("#")) {
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
-
 
   return (
     <>
@@ -23,38 +22,56 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center">
           <div>
             <a href="#" className="text-3xl font-bold text-white">
-              Rizki <span className="text-primary">Adittya</span><span>.</span>
+              Rizki <span className="text-primary">Adittya</span>
+              <span>.</span>
             </a>
           </div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-10">
-            {['#home', '#tentang', '#skill', '#projek', '#kontak'].map((href, index) => {
-                const label = ['Beranda', 'Tentang Saya', 'Skill', 'Projek', 'Kontak'][index];
+            {["#home", "#tentang", "#skill", "#projek", "#pesan"].map(
+              (href, index) => {
+                const label = [
+                  "Beranda",
+                  "Tentang Saya",
+                  "Skill",
+                  "Projek",
+                  "Pesan",
+                ][index];
                 const isActive = activeSection === href;
 
                 return (
-                    <a 
-                        key={href}
-                        href={href} 
-                        onClick={() => handleSectionClick(href)}
-                        // Class desktop bersyarat: text-primary jika aktif, text-white/80 jika tidak
-                        className={`relative transition duration-300 hover:text-primary group 
-                                    ${isActive ? 'text-primary' : 'text-white/80'}`}
-                    >
-                        <span>{label}</span>
-                        <span className={`absolute left-0 -bottom-1 h-0.5 bg-primary transition-all duration-300 
-                                            ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} 
-                        />
-                    </a>
+                  <a
+                    key={href}
+                    href={href}
+                    onClick={() => handleSectionClick(href)}
+                    // Class desktop bersyarat: text-primary jika aktif, text-white/80 jika tidak
+                    className={`relative transition duration-300 hover:text-primary group 
+                                    ${
+                                      isActive
+                                        ? "text-primary"
+                                        : "text-white/80"
+                                    }`}
+                  >
+                    <span>{label}</span>
+                    <span
+                      className={`absolute left-0 -bottom-1 h-0.5 bg-primary transition-all duration-300 
+                                            ${
+                                              isActive
+                                                ? "w-full"
+                                                : "w-0 group-hover:w-full"
+                                            }`}
+                    />
+                  </a>
                 );
-            })}
+              }
+            )}
           </div>
 
           {/* Mobile icon */}
           <div className="md:hidden">
             <button
-              onClick={() => setShowMenu(prev => !prev)}
+              onClick={() => setShowMenu((prev) => !prev)}
               aria-label={showMenu ? "Tutup menu" : "Buka menu"}
               className="text-white text-2xl p-2"
             >
@@ -66,7 +83,7 @@ const Navbar = () => {
 
       {/* Mobile menu component */}
       {showMenu && (
-        <MobileNavbar 
+        <MobileNavbar
           activeSection={activeSection}
           handleSectionClick={handleSectionClick}
         />

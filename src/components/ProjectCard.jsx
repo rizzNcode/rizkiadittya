@@ -3,14 +3,8 @@ import React from "react";
 const ProjectCard = ({ title, description, image, tech, tall }) => {
   return (
     <div className="bg-dark-300 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 cursor-pointer flex flex-col h-full">
-      
       {/* Gambar */}
-   <img
-  src={image}
-  alt={title}
-  className="w-full h-auto object-cover"
-/>
-
+      <img src={image} alt={title} className="w-full h-auto object-cover" />
 
       {/* Konten */}
       <div className="p-6 flex flex-col flex-grow">
@@ -31,12 +25,9 @@ const ProjectCard = ({ title, description, image, tech, tall }) => {
 
         {/* Tombol */}
         <div className="mt-auto">
-          <a
-            href="#"
-            className="block text-center px-4 py-2 bg-primary rounded-lg font-medium hover:bg-primary/50 transition duration-300"
-          >
+          {/* <a className="block text-center px-4 py-2 bg-primary rounded-lg font-medium hover:bg-primary/50 transition duration-300">
             Lihat
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

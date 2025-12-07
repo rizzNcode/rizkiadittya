@@ -1,23 +1,26 @@
 import { Resend } from "resend";
 
-export default async function handler(req, res) {
+export const config = {
+  runtime: "nodejs18.x",
+};
+
+export default async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Only POST allowed" });
   }
 
-  // Supabase sends raw body, so parse it manually
-  const rawBody = await req.text();
-  const { message } = JSON.parse(rawBody);
-
-  if (!message) {
-    return res.status(400).json({ message: "Message missing" });
-  }
-
   try {
+    const rawBody = await req.text();
+    const { message } = JSON.parse(rawBody);
+
+    if (!message) {
+      return res.status(400).json({ message: "Message missing" });
+    }
+
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      from: "Anon Message <no-reply@yourdomain.com>",
+      from: "Anon Message <onboarding@resend.dev>",
       to: "rizz9579@gmail.com",
       subject: "Pesan Anonim Baru Masuk!",
       html: `
@@ -32,4 +35,4 @@ export default async function handler(req, res) {
     console.error(err);
     return res.status(500).json({ message: "Error sending email", err });
   }
-}
+};

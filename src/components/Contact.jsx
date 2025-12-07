@@ -14,11 +14,15 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
+      const res = await fetch("/api/anon-message", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ message })
+});
+
+  
 
       const data = await res.json();
 

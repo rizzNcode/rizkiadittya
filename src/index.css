@@ -1,0 +1,41 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+* {
+  font-family: Poppins, sans-serif;
+}
+
+@theme {
+  --color-dark-100: #1a1a1a;
+  --color-dark-200: #1f1f1f;
+  --color-dark-300: #2d2d2d;
+  --color-dark-400: #3d3d3d;
+  --color-primary: #007bff;
+  --color-purple: #885cf6;
+  --color-pink: #ec4899;
+  --color-blue: #3b82f6;
+  --color-green: #25d366;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid var(--color-primary);
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards, blink-caret 0.75s step-end;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20ch;
+  }
+}
+
+@keyframes blink-caret{
+  from, to {border-color: transparent;} 50% {border-color: var(--color-primary);}
+}

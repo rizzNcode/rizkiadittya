@@ -14,6 +14,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
+      // Pakai absolute URL biar aman
       const res = await fetch("/api/anon-message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -48,17 +49,12 @@ const Contact = () => {
       className="py-20 bg-dark-200"
     >
       <div className="container mx-auto px-6 max-w-3xl">
-        
-        {/* Title */}
         <h2 className="text-center text-3xl font-bold mb-12 text-primary tracking-wide">
           Kirim Pesan Anonim
         </h2>
 
-        {/* Form Card */}
         <div className="bg-dark-300 p-8 rounded-2xl shadow-xl border border-dark-100/20">
           <form onSubmit={handleSubmit} className="space-y-8">
-            
-            {/* Textarea */}
             <div>
               <label className="text-gray-300 mb-3 block text-lg font-semibold">
                 Pesan kamu
@@ -86,7 +82,7 @@ const Contact = () => {
                 disabled={loading}
                 className="
                   inline-flex items-center justify-center gap-3
-                  bg-primary px-10 py-4 rounded-xl text-lg font-semibold 
+                  bg-primary px-10 py-4 rounded-xl text-lg font-semibold
                   hover:bg-primary/70 transition
                   disabled:opacity-50 disabled:cursor-not-allowed
                 "
@@ -95,12 +91,10 @@ const Contact = () => {
                 <FaPaperPlane size={20} />
               </button>
 
-              {/* Success message */}
               {success && (
                 <motion.p
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
                   className="text-green-400 mt-5 text-base font-medium"
                 >
                   ✓ Pesan berhasil dikirim!
@@ -109,7 +103,6 @@ const Contact = () => {
             </div>
           </form>
         </div>
-
       </div>
     </motion.div>
   );

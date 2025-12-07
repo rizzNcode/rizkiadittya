@@ -42,7 +42,7 @@ const Hero = () => {
           <div className="flex flex-wrap items-center justify-start gap-3">
             <a
               href="https://wa.me/6287700314206"
-              className="px-3 py-3 bg-green rounded-lg rounded-lg font-medium hover:bg-primary/20 transition duration-300 text-md md:text-base whitespace-nowrap flex items-center justify-center gap-2"
+              className="px-3 py-3 bg-green rounded-lg font-medium hover:bg-primary/20 transition duration-300 text-md md:text-base whitespace-nowrap flex items-center justify-center gap-2"
             >
               WhatsApp
               <FaWhatsapp size={22} color="white" />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const sections = ["home", "tentang", "skill", "projek", "pengalaman", "kontak"];
+const sections = ["home", "tentang", "skill", "projek", "kontak"];
 
 const MobileNavbar = ({ onClose }) => {
   const [activeSection, setActiveSection] = useState("home");
@@ -25,7 +25,7 @@ const MobileNavbar = ({ onClose }) => {
 
   const handleClick = (id) => {
     setActiveSection(id);
-    setTimeout(onClose, 150); // beri jeda agar warna aktif muncul
+    setTimeout(onClose, 150); 
   };
 
   return (

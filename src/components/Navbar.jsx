@@ -29,8 +29,8 @@ const Navbar = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-10">
-            {['#home', '#tentang', '#skill', '#projek', '#pengalaman', '#kontak'].map((href, index) => {
-                const label = ['Beranda', 'Tentang Saya', 'Skill', 'Projek', 'Pengalaman', 'Kontak'][index];
+            {['#home', '#tentang', '#skill', '#projek', '#kontak'].map((href, index) => {
+                const label = ['Beranda', 'Tentang Saya', 'Skill', 'Projek', 'Kontak'][index];
                 const isActive = activeSection === href;
 
                 return (

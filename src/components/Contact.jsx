@@ -50,19 +50,19 @@ const Contact = () => {
     >
       <div className="container mx-auto px-6 max-w-3xl">
         <h2 className="text-center text-3xl font-bold mb-12 text-primary tracking-wide">
-          Kirim Pesan Anonim
+          Pesan
         </h2>
 
         <div className="bg-dark-300 p-8 rounded-2xl shadow-xl border border-dark-100/20">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div>
               <label className="text-gray-300 mb-3 block text-lg font-semibold">
-                Pesan kamu
+                Kirim pesan anonim 
               </label>
 
               <textarea
                 rows="8"
-                placeholder="Tulis pesanmu di sini..."
+                placeholder="Tulis pesan..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="

@@ -1,10 +1,6 @@
-import { Resend } from "resend";
+const { Resend } = require("resend");
 
-export const config = {
-  runtime: "nodejs",
-};
-
-export default async (req, res) => {
+module.exports = async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Only POST allowed" });
   }

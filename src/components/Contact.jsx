@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FaPaperPlane } from "react-icons/fa";
 import React, { useState } from "react";
-import { supabase } from "../supabaseClient";
 
 const Contact = () => {
   const [message, setMessage] = useState("");
@@ -14,19 +13,29 @@ const Contact = () => {
 
     setLoading(true);
 
-    const { error } = await supabase.from("messages").insert({
-      content: message,
-    });
+    try {
+      const res = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setSuccess(true);
+        setMessage("");
+        setTimeout(() => setSuccess(false), 3000);
+      } else {
+        console.error(data);
+        alert("Gagal mengirim pesan!");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Terjadi kesalahan saat mengirim pesan!");
+    }
 
     setLoading(false);
-
-    if (!error) {
-      setSuccess(true);
-      setMessage("");
-      setTimeout(() => setSuccess(false), 3000);
-    } else {
-      alert("Gagal mengirim pesan!");
-    }
   };
 
   return (
@@ -49,12 +58,14 @@ const Contact = () => {
               <label className="text-gray-300 mb-4 text-xl font-medium">
                 Kirim pesan anonim :
               </label>
+
               <textarea
                 rows="10"
                 placeholder="Tulis pesan..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="bg-dark-400 p-6 text-xl rounded-2xl text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                className="bg-dark-400 p-6 text-xl rounded-2xl text-gray-200 
+                  focus:outline-none focus:ring-2 focus:ring-primary resize-none"
               ></textarea>
             </div>
 
@@ -62,7 +73,9 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex place-items-end justify-center gap-4 bg-primary px-14 py-5 rounded-2xl text-xl font-semibold hover:bg-primary/70 transition disabled:opacity-50"
+                className="inline-flex justify-center items-center gap-4 
+                  bg-primary px-14 py-5 rounded-2xl text-xl font-semibold 
+                  hover:bg-primary/70 transition disabled:opacity-50"
               >
                 {loading ? "Mengirim..." : "Kirim Pesan"}{" "}
                 <FaPaperPlane size={26} />

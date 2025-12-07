@@ -6,8 +6,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const rawBody = await req.text();
-    const { message } = JSON.parse(rawBody);
+    const { message } = req.body; // <-- FIX DI SINI ❗
 
     if (!message) {
       return res.status(400).json({ message: "Message missing" });
@@ -28,7 +27,7 @@ module.exports = async (req, res) => {
 
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({ message: "Error sending email", err });
+    console.error("EMAIL ERROR:", err);
+    return res.status(500).json({ message: "Error sending email" });
   }
 };

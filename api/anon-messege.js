@@ -1,4 +1,4 @@
-import {Resend} from 'resend';
+import { Resend } from "resend";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -17,13 +17,13 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: "Anon Message <onboarding@resend.dev>",
       to: "rizz9579@gmail.com",
-      subject: "Pesan Anonim Baru Masuk!",
+      subject: "Pesan Anonim Baru!",
       html: `<p>${message}</p>`
     });
 
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({ message: "Error sending email", err });
+    console.error("RESEND ERROR:", err);
+    return res.status(500).json({ message: "Error sending email" });
   }
 }

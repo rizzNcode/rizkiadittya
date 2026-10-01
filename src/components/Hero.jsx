@@ -39,16 +39,17 @@ const Hero = () => {
             Hallo, Saya <span className="text-primary">Rizki Adittya</span>
           </h1>
           <h2 className="text-2xl md:text-3xl mb-6 font-semibold typewriter">
-            Mobile & Web Developer
+            Mahasiswa Informatika
           </h2>
-          <p className="text-lg text-grey-300 mb-8">
-            Awal kemunculan saya di dunia ini sekitar 19 tahun yang lalu. Saya
-            merupakan si paling clean code garis keras.
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-wide max-w-xl mb-8">
+            Entahlah, tapi ya begitulah. Jatuh cinta pada dunia mobile dev. Anti
+            code berantakan, dan sekarang saya juga tertarik belajar UI/UX &amp;
+            system architecture.
           </p>
           <div className="flex flex-wrap items-center justify-start gap-6">
             {/* WhatsApp */}
             <a
-              href="https://wa.me/6287700314206"
+              href="https://wa.me/6285188392097"
               className="px-2 py-2 bg-green rounded-lg hover:bg-green/80 transition duration-300 flex items-center justify-center  shadow-[0_0_10px_rgba(255,255,255,0.15)] hover:shadow-[0_0_15px_rgba(255,255,255,0.25)]"
             >
               <FaWhatsapp
@@ -61,7 +62,7 @@ const Hero = () => {
             {/* Instagram */}
 
             <a
-              href="https://instagram.com/rz.kiw"
+              href="https://instagram.com/rizkiadittyaa_"
               className="px-2 py-2 rounded-lg font-medium text-white text-md md:text-base
 whitespace-nowrap flex items-center justify-center gap-3
 bg-[linear-gradient(to_right,#d946ef,#ec4899)]
@@ -72,7 +73,7 @@ hover:opacity-80 transition duration-300  shadow-[0_0_10px_rgba(255,255,255,0.15
 
             {/* LinkedIn */}
             <a
-              href=""
+              href="https://linkedin.com/in/rizkiadittyapaturohman"
               className="px-2 py-2 bg-[#0A66C2] rounded-lg hover:bg-[#0A66C2]/80 transition duration-300 flex items-center justify-center  shadow-[0_0_10px_rgba(255,255,255,0.15)] hover:shadow-[0_0_15px_rgba(255,255,255,0.25)]"
             >
               <FaLinkedinIn
@@ -84,7 +85,7 @@ hover:opacity-80 transition duration-300  shadow-[0_0_10px_rgba(255,255,255,0.15
 
             {/* GitHub */}
             <a
-              href="https://github.com/SirDodoll"
+              href="https://github.com/rizzNcode"
               className="px-2 py-2 rounded-lg bg-black/90 hover:bg-black/80 transition duration-300 flex items-center justify-center
              shadow-[0_0_10px_rgba(255,255,255,0.15)] hover:shadow-[0_0_15px_rgba(255,255,255,0.25)]"
             >

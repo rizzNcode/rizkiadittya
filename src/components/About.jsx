@@ -19,7 +19,7 @@ const About = () => {
           Tentang <span className="text-primary">Saya</span>
         </h2>
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          ketahui lebih lanjut tentang latar belakang saya
+          latar belakang, hobby dan lain lain
         </p>
 
         {/* image + my journey */}
@@ -43,17 +43,34 @@ const About = () => {
             className="md:w-1/2"
           >
             <div className="rounded-2xl p-8">
-              <h1 className="text-2xl font-semibold mb-6">Perjalanan Saya</h1>
-              <p className="text-gray-300 mb-6">
-                Sebenarnya dibagian ini niatnya mau di isi seputar perjalanan
-                hidup dari bayi sampe sekarang, cuma males ngetik, nanti saja
-                bagian ini saya update lagi.
+              <h1 className="text-2xl font-semibold mb-6">
+                Rizki Adittya Paturohman
+              </h1>
+              <p className="text-base text-gray-300 mb-5 leading-relaxed tracking-wide max-w-xl">
+                22 April 2006 merupakan awal kemunculan saya di dunia ini, saya
+                lahir di Bandung, merupakan anak ke-2 dari 4 bersaudara. Saya
+                alumni SDN Pangauban 2, SMPN 1 Katapang dan SMKN 1 Katapang,
+                tahun pertama setelah saya lulus SMK saya kerja freelance jadi
+                mobile developer (walaupun lebih banyak nganggurnya sih),
+                sebelum akhirnya saya masuk ke Universitas Teknologi Bandung,
+                prodi Informatika.
               </p>
-              <p className="text-gray-300 mb-12">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quo
-                atque perspiciatis autem, eligendi cum nam numquam ut deserunt
-                eos sint perferendis laborum tempore mollitia, incidunt rem
-                dolores provident veniam.
+              <p className="text-base text-gray-300 mb-5 leading-relaxed tracking-wide max-w-xl">
+                Saya orangnya cenderung introvert dan cenderung lebih nyaman
+                ngobrol sama 1-4 orang saja daripada ngobrol sama banyak orang
+                sekaligus, bukan karena tidak suka atau malu, tapi ntahlah, itu
+                kayak otomatis aja, kalau saya ada dikerumunan banyak orang,
+                saya cenderung jarang sekali aktif, kecuali kalau memang ada
+                paksaan yang mengharuskan saya nimbrung.
+              </p>
+              <p className="text-base text-gray-300 mb-10 leading-relaxed tracking-wide max-w-xl">
+                Hobby saya futsal sama main gitar (walaupun keduanya tidak
+                jago), selain itu, saya juga sangat suka sekali petrichor, aroma
+                tanah yang muncul saat / setelah hujan, terus saya suka sama
+                apalagi ya? entahlah, saya suka sekali banyak hal, udara &
+                pemandangan langit sebelum subuh, Barcelona, ayam geprek,
+                pesawat masih banyak lagi. Jadi seperti itulah kurang lebih,
+                sekian terimakasih.
               </p>
 
               {/* Card */}
@@ -61,13 +78,11 @@ const About = () => {
                 {aboutInfo.map((data, index) => (
                   <div
                     key={index}
-                    className="bg-dark-300 rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-2 cursor-pointer"
+                    className="bg-dark-300 rounded-2xl p-3 transition-transform duration-300 hover:-translate-y-2 cursor-pointer"
                   >
-                    <div className="text-primary text-4xl">
+                    <div className="text-primary text-5xl flex items-center justify-center mb-4">
                       <data.icon />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{data.title}</h3>
-                    <p className="text-gray-400">{data.description}</p>
                   </div>
                 ))}
               </div>

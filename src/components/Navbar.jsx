@@ -29,13 +29,13 @@ const Navbar = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-10">
-            {["#home", "#tentang", "#skill", "#projek", "#pesan"].map(
+            {["#home", "#tentang", "#skill", "#project", "#pesan"].map(
               (href, index) => {
                 const label = [
                   "Beranda",
                   "Tentang Saya",
                   "Skill",
-                  "Projek",
+                  "project",
                   "Pesan",
                 ][index];
                 const isActive = activeSection === href;

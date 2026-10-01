@@ -9,7 +9,9 @@ const ProjectCard = ({ title, description, image, tech, tall }) => {
       {/* Konten */}
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-400 mb-4 flex-grow">{description}</p>
+        <p className="text-gray-400 mb-4 flex-grow leading-relaxed tracking-wide max-w-xl">
+          {description}
+        </p>
 
         {/* Tag Teknologi */}
         <div className="flex flex-wrap gap-2 mb-6">

@@ -19,7 +19,7 @@ const About = () => {
           Tentang <span className="text-primary">Saya</span>
         </h2>
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          latar belakang, hobby dan lain lain
+          Latar belakang, hobby dan lain lain
         </p>
 
         {/* image + my journey */}

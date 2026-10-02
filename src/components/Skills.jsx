@@ -13,8 +13,8 @@ const Skills = () => {
       className="bg-dark-100 py-20"
     >
       <div className="container px-6">
-        <h2 className="text-3xl font-bold text-center mb-4">
-          <span className="text-primary">Skill</span>
+        <h2 className="text-3xl font-bold text-center mb-4">Skill &
+          <span className="text-primary">Tools</span>
         </h2>
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-10">
           Masih pemula bg

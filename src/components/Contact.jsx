@@ -47,21 +47,21 @@ const Contact = () => {
       id="pesan"
       className="py-20 bg-dark-200"
     >
-      <div className="container mx-auto px-6 max-w-3xl">
-        <h2 className="text-center text-3xl font-bold mb-12 text-primary tracking-wide">
-          Pesan
+      <div className="container mx-auto px- max-w-3xl">
+        <h2 className=" text-3xl font-bold text-center mb-12">
+          Pesan <span className="text-primary">Anonim</span>
         </h2>
 
         <div className="bg-dark-300 p-8 rounded-2xl shadow-xl border border-dark-100/20">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div>
               <label className="text-gray-300 mb-3 block text-lg font-semibold">
-                Kirim pesan anonim 
+                Kirim pesan anonim
               </label>
 
               <textarea
                 rows="8"
-                placeholder="Tulis pesan..."
+                placeholder="Tulis pesan...."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="
@@ -96,7 +96,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-green-400 mt-5 text-base font-medium"
                 >
-                  ✓ Pesan berhasil dikirim!
+                  Pesan berhasil dikirim!
                 </motion.p>
               )}
             </div>

@@ -14,8 +14,8 @@ const Project = () => {
       className="py-20 bg-dark-200"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">
-          <span className="text-primary">Project</span>
+        <h2 className="text-3xl font-bold text-center mb-4">Proje
+          <span className="text-primary">ct</span>
         </h2>
         <p className="text-center text-gray-400 max-w-2xl mx-auto mb-16">
           {" "}

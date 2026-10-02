@@ -9,7 +9,8 @@ import {
   FaCloud,
 } from "react-icons/fa";
 
-import profileImg from "../assets/spiderman.jpg";
+import profileImg from "../assets/rizki.jpg";
+import profileSpidermanImg from "../assets/spiderman.jpg";
 import aboutImg from "../assets/aboutBaru.jpg";
 import projectImg1 from "../assets/mansio.png";
 import projectImg2 from "../assets/id_music.png";
@@ -20,6 +21,7 @@ import { FaDesktop } from "react-icons/fa6";
 export const assets = {
   profileImg,
   aboutImg,
+  profileSpidermanImg,
 };
 
 export const aboutInfo = [

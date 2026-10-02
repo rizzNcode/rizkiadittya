@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { aboutInfo, assets } from "../assets/assets";
-import { div } from "framer-motion/m";
 
 const About = () => {
   return (
@@ -23,18 +22,17 @@ const About = () => {
         </p>
 
         {/* image + my journey */}
-        <div className="flex flex-col md:flex-row items-center gap-12 ">
+        <div className="flex flex-col md:flex-row md:items-stretch gap-12">
           {/* image */}
-          <div className="md:w-1/2 rounded-2xl overflow-hidden flex justify-center">
+          <div className="md:w-1/2 relative rounded-2xl overflow-hidden">
             <motion.img
               src={assets.aboutImg}
               alt="About"
-              className="w-full h-auto md:h-[900px] object-cover object-center"
+              className="w-full h-auto md:absolute md:inset-0 md:h-full object-cover object-center"
             />
           </div>
 
           {/* Text content */}
-
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,53 +40,70 @@ const About = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="md:w-1/2"
           >
-            <div className="rounded-2xl p-8">
-              <h1 className="text-2xl font-semibold mb-6">
-                Rizki Adittya Paturohman
-              </h1>
-              <p className="text-base text-gray-300 mb-5 leading-relaxed tracking-wide max-w-xl">
-                22 April 2006 merupakan awal kemunculan saya di dunia ini, saya
-                lahir di Bandung, merupakan anak ke-2 dari 4 bersaudara. Saya
-                alumni SDN Pangauban 2, SMPN 1 Katapang dan SMKN 1 Katapang,
-                tahun pertama setelah saya lulus SMK saya kerja freelance jadi
-                mobile developer (walaupun lebih banyak nganggurnya sih),
-                sebelum akhirnya saya masuk ke Universitas Teknologi Bandung,
-                prodi Informatika.
-              </p>
-              <p className="text-base text-gray-300 mb-5 leading-relaxed tracking-wide max-w-xl">
-                Saya orangnya cenderung introvert dan cenderung lebih nyaman
-                ngobrol sama 1-4 orang saja daripada ngobrol sama banyak orang
-                sekaligus, bukan karena tidak suka atau malu, tapi ntahlah, itu
-                kayak otomatis aja, kalau saya ada dikerumunan banyak orang,
-                saya cenderung jarang sekali aktif, kecuali kalau memang ada
-                paksaan yang mengharuskan saya nimbrung.
-              </p>
-              <p className="text-base text-gray-300 mb-10 leading-relaxed tracking-wide max-w-xl">
-                Hobby saya futsal sama main gitar (walaupun keduanya tidak
-                jago), selain itu, saya juga sangat suka sekali petrichor, aroma
-                tanah yang muncul saat / setelah hujan, terus saya suka sama
-                apalagi ya? entahlah, saya suka sekali banyak hal, udara &
-                pemandangan langit sebelum subuh, Barcelona, ayam geprek,
-                pesawat masih banyak lagi. Jadi seperti itulah kurang lebih,
-                sekian terimakasih.
-              </p>
+            <div className="h-full flex flex-col justify-between gap-8 py-2 md:px-4">
+              {/* Nama */}
+              <div>
+                <h1 className="text-3xl font-bold">
+                  Rizki Adittya <span>Paturohman</span>
+                </h1>
+              </div>
 
-              {/* Card */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {aboutInfo.map((data, index) => (
-                  <div
-                    key={index}
-                    className="bg-dark-300 rounded-2xl p-3 transition-transform duration-300 hover:-translate-y-2 cursor-pointer"
-                  >
-                    <div className="text-primary text-5xl flex items-center justify-center mb-4">
-                      <data.icon />
-                    </div>
-                  </div>
-                ))}
+              {/* Latar belakang */}
+              <div className="border-l-4 border-primary pl-5">
+                <h3 className="text-primary text-sm font-semibold uppercase tracking-widest mb-2">
+                  Latar Belakang
+                </h3>
+                <p className="text-base text-gray-300 leading-relaxed text-justify">
+                  Saya lahir di Bandung pada 22 April 2006 sebagai anak ke-2
+                  dari 4 bersaudara. Saya lulusan SMK Negeri 1 Katapang. Tahun
+                  pertama setelah lulus SMK, saya bekerja freelance sebagai
+                  mobile developer (walaupun lebih banyak menganggurnya sih),
+                  sebelum akhirnya melanjutkan kuliah di Universitas Teknologi
+                  Bandung, program studi Informatika.
+                </p>
+              </div>
+
+              {/* Kepribadian & hobi */}
+              <div className="border-l-4 border-primary pl-5">
+                <h3 className="text-primary text-sm font-semibold uppercase tracking-widest mb-2">
+                  Kepribadian & Hobi
+                </h3>
+                <p className="text-base text-gray-300 leading-relaxed text-justify">
+                  Saya orangnya cenderung introvert dan cenderung lebih nyaman
+                  sendirian atau bersama beberapa teman dekat saja, tapi saya
+                  juga bisa jadi lebih aktif kalau diperlukan. Hobi saya bermain
+                  gitar & futsal (walaupun keduanya belum terlalu jago). Fun
+                  fact, saya suka sekali berkendara motor malam-malam tepat
+                  setelah hujan baru reda. Saya menyukai suasana itu, saya juga
+                  pemandangan langit malam dan langit menjelang subuh.
+                </p>
+              </div>
+
+              {/* Dunia software engineer */}
+              <div className="border-l-4 border-primary pl-5">
+                <h3 className="text-primary text-sm font-semibold uppercase tracking-widest mb-2">
+                  Dunia Software Engineering
+                </h3>
+                <p className="text-base text-gray-300 leading-relaxed text-justify">
+                  Di dunia software engineering, saya tertarik secara khusus
+                  pada bidang mobile development, walaupun sekarang baru sebatas
+                  mengeksplorasi cross-platform mobile development. Saya belum
+                  pernah membuat aplikasi dengan bahasa native seperti Java,
+                  Kotlin, atau Swift. Awal saya belajar coding kurang lebih
+                  seperti kebanyakan orang, mulai dari dasar web development
+                  dengan HTML, CSS, dan JavaScript, lalu mencoba-coba framework
+                  seperti React, Next.js, dan belajar backend menggunakan
+                  Node.js (Express). Saya juga pernah belajar PHP dan Laravel
+                  waktu masih di SMK, tapi jujur saja, sekarang saya sudah tidak
+                  memakai PHP lagi selain pada saat uji kompetensi di SMK. Saya
+                  mulai belajar mobile development saat PKL di PT Jerbee. Di
+                  sana saya pertama kali belajar Flutter, dan selama PKL saya
+                  membuat satu aplikasi sampai selesai, mulai dari perancangan
+                  sistem, desain UI/UX, sampai tahap testing dan deployment.
+                </p>
               </div>
             </div>
           </motion.div>
-          <div></div>
         </div>
       </div>
     </motion.div>

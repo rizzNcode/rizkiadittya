@@ -8,6 +8,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa6";
 import { assets } from "../assets/assets";
+import SpiderReveal from "./SpiderReveal";
 
 const Hero = () => {
   return (
@@ -21,14 +22,14 @@ const Hero = () => {
     >
       <div className="container mx-auto px-6 flex-col md:flex flex-row items-center justify-between">
         {/* Right */}
-        <div className="md:w-1/2 flex justify-center mt-8 mb-8 mt-8 relative">
-          {/* Efek cahaya belakang */}
+        <div className="md:w-1/2 flex justify-center mt-8 mb-8 relative">
           <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-primary rounded-xl blur-2xl opacity-60"></div>
 
-          {/* Gambar profil */}
-          <motion.img
-            className="relative mt-4 mb-4 w-64 h-64 md:w-80 md:h-80 object-cover object-[50%_20%] z-10 animate-float"
-            src={assets.profileImg}
+          {/* Foto Profile + Spiderman*/}
+          <SpiderReveal
+            className="relative mt-4 mb-4 z-10 animate-float"
+            faceSrc={assets.profileImg}
+            maskSrc={assets.profileSpidermanImg}
             alt="profile"
           />
         </div>
@@ -42,7 +43,7 @@ const Hero = () => {
             Mahasiswa Informatika
           </h2>
           <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-wide max-w-xl mb-8">
-            Entahlah, tapi ya begitulah. Jatuh cinta pada dunia mobile dev. Anti
+            Entahlah, tapi yabegitulah. Jatuh cinta pada dunia Mobile Dev. Anti
             code berantakan, dan sekarang saya juga tertarik belajar UI/UX &amp;
             system architecture.
           </p>

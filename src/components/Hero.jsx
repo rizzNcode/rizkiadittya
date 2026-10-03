@@ -43,7 +43,7 @@ const Hero = () => {
             Mahasiswa Informatika
           </h2>
           <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-wide max-w-xl mb-8">
-            Entahlah, tapi yabegitulah. Jatuh cinta pada dunia Mobile Dev. Anti
+            Entahlah, tapi yabegitulah. Jatuh cinta pada dunia Mobile ev. Anti
             code berantakan, dan sekarang saya juga tertarik belajar UI/UX &amp;
             system architecture.
           </p>

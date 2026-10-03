@@ -18,10 +18,33 @@ import projectImg3 from "../assets/goblog.png";
 import projectImg4 from "../assets/coindex2.avif";
 import { FaDesktop } from "react-icons/fa6";
 
+// Playlist
+import Appatie from "../assets/cover/appetie.png";
+import Uyi2 from "../assets/cover/uyi2.png";
+import Colourway from "../assets/cover/colourway.png";
+import Only from "../assets/cover/only.png";
+import Best from "../assets/cover/best.png";
+import Intro from "../assets/cover/intro.png";
+import Nov from "../assets/cover/nov.png";
+import All from "../assets/cover/all.png";
+import You from "../assets/cover/you.png";
+import Love from "../assets/cover/love.png";
+import Be from "../assets/cover/be.png";
+
 export const assets = {
   profileImg,
   aboutImg,
   profileSpidermanImg,
+  Appatie,
+  Uyi2,
+  Only,
+  Colourway,
+  Best,
+  Intro,
+  Nov,
+  All,
+  Love,
+  Be,
 };
 
 export const aboutInfo = [
@@ -129,5 +152,82 @@ export const projects = [
     icons: [FaReact, FaCloud],
     demo: "#",
     code: "#",
+  },
+];
+
+//   { title: "Judul Lagu 1", artist: "Artis 1", cover: "", link: "" },
+//   { title: "Judul Lagu 2", artist: "Artis 2", cover: "", link: "" },
+//   { title: "Judul Lagu 3", artist: "Artis 3", cover: "", link: "" },
+//   { title: "Judul Lagu 4", artist: "Artis 4", cover: "", link: "" },
+//   { title: "Judul Lagu 5", artist: "Artis 5", cover: "", link: "" },
+//   { title: "Judul Lagu 6", artist: "Artis 6", cover: "", link: "" },
+//   { title: "Judul Lagu 7", artist: "Artis 7", cover: "", link: "" },
+//   { title: "Judul Lagu 8", artist: "Artis 8", cover: "", link: "" },
+//   { title: "Judul Lagu 9", artist: "Artis 9", cover: "", link: "" },
+//   { title: "Judul Lagu 10", artist: "Artis 10", cover: "", link: "" },
+// ];
+
+export const playlistData = [
+  {
+    title: "Only",
+    artist: "Lee Hi",
+    cover: Only,
+    link: "https://open.spotify.com/track/6TBJkXHPhu3EsMk1bshwuI",
+  },
+  {
+    title: "November Rain",
+    artist: "Guns N' Roses",
+    cover: Nov,
+    link: "https://open.spotify.com/search/november%20rain",
+  },
+  {
+    title: "Colourway",
+    artist: "Novo Amor",
+    cover: Colourway,
+    link: "https://open.spotify.com/track/2oa53bhiNPCz2CGh26AYxi",
+  },
+  {
+    title: "Sweet Child O' Mine",
+    artist: "Guns N' Roses",
+    cover: Appatie,
+    link: "https://open.spotify.com/track/7snQQk1zcKl8gZ92AnueZW",
+  },
+  {
+    title: "All of My Days",
+    artist: "KIM SE JEONG",
+    cover: All,
+    link: "https://open.spotify.com/track/2RBuzNyLuV1jXU8qi84Hiy",
+  },
+  {
+    title: "You Are My Everything",
+    artist: "GUMMY",
+    cover: You,
+    link: "https://open.spotify.com/track/4s80CRYk3rRPZE56NvmFi7",
+  },
+  {
+    title: "Best Part (feat. H.E.R)",
+    artist: "Daniel Caesar, H.E.R.",
+    cover: Best,
+    link: "https://open.spotify.com/track/1Q7EgiMOuwDcB0PJC6AzON",
+  },
+
+  {
+    title: "love.",
+    artist: "wave to earth",
+    cover: Love,
+    link: "https://open.spotify.com/track/5mtTAScDytxMMqZj14NmlN",
+  },
+  {
+    title: "Intro (end of the world)",
+    artist: "Ariana Grande",
+    cover: Intro,
+    link: "https://open.spotify.com/track/2o1pb13quMReXZqE7jWsgq",
+  },
+
+  {
+    title: "Beautiful",
+    artist: "Meego",
+    cover: Be,
+    link: "https://open.spotify.com/track/2OeBu4HHB54fOFAdlgK3Mf",
   },
 ];

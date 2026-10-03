@@ -1,6 +1,90 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { aboutInfo, assets } from "../assets/assets";
+import { aboutInfo, assets, playlistData } from "../assets/assets";
+
+const Cover = ({ src, alt, playable }) => (
+  <div className="relative w-14 h-14 shrink-0 rounded-lg overflow-hidden">
+    {src ? (
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+      />
+    ) : (
+      <div
+        className="w-full h-full bg-white/10 text-primary text-xl flex items-center justify-center"
+        aria-hidden="true"
+      >
+        ♪
+      </div>
+    )}
+    {playable && (
+      <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 fill-primary"
+          aria-hidden="true"
+        >
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+    )}
+  </div>
+);
+
+const SongRow = ({ song, index }) => {
+  const playable = Boolean(song.link);
+  const base =
+    "group flex items-center gap-4 rounded-xl border border-white/5 bg-white/[0.03] p-2.5 transition-all duration-300";
+  const hover = playable
+    ? "hover:border-primary/50 hover:bg-white/[0.06] hover:translate-x-1"
+    : "";
+
+  const content = (
+    <>
+      <span
+        className={`w-8 text-center text-lg font-bold tabular-nums ${
+          index < 3 ? "text-primary" : "text-gray-500"
+        }`}
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <Cover src={song.cover} alt={song.title} playable={playable} />
+      <div className="min-w-0 flex-1">
+        <p className="font-semibold truncate group-hover:text-primary transition-colors">
+          {song.title}
+        </p>
+        <p className="text-sm text-gray-400 truncate">{song.artist}</p>
+      </div>
+      {playable && (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-4 h-4 shrink-0 fill-none stroke-gray-500 group-hover:stroke-primary transition-colors"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M7 17L17 7M8 7h9v9" />
+        </svg>
+      )}
+    </>
+  );
+
+  return playable ? (
+    <a
+      href={song.link}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Putar ${song.title} oleh ${song.artist}`}
+      className={`${base} ${hover}`}
+    >
+      {content}
+    </a>
+  ) : (
+    <div className={base}>{content}</div>
+  );
+};
 
 const About = () => {
   return (
@@ -104,6 +188,30 @@ const About = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* Top 10 playlist */}
+        <div className="mt-16 border-l-4 border-primary pl-5">
+          <h3 className="text-primary text-sm font-semibold uppercase tracking-widest mb-4">
+            Top 10 Playlist
+          </h3>
+          <ol className="grid grid-cols-1 md:grid-cols-2 md:grid-flow-col md:grid-rows-5 gap-x-8 gap-y-3">
+            {playlistData.map((song, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.9,
+                  ease: "easeOut",
+                  delay: (i % 5) * 0.08,
+                }}
+                viewport={{ once: false, amount: 0.2 }}
+              >
+                <SongRow song={song} index={i} />
+              </motion.li>
+            ))}
+          </ol>
         </div>
       </div>
     </motion.div>

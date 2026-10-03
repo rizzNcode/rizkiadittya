@@ -2,8 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { aboutInfo, assets, playlistData } from "../assets/assets";
 
+// Cover album, atau kotak placeholder kalau cover kosong.
+// Kalau lagu punya link, muncul ikon play saat di-hover.
 const Cover = ({ src, alt, playable }) => (
-  <div className="relative w-14 h-14 shrink-0 rounded-lg overflow-hidden">
+  <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-lg overflow-hidden">
     {src ? (
       <img
         src={src}
@@ -32,10 +34,11 @@ const Cover = ({ src, alt, playable }) => (
   </div>
 );
 
+// Satu baris lagu. Jadi link kalau ada URL, kalau tidak jadi div biasa.
 const SongRow = ({ song, index }) => {
   const playable = Boolean(song.link);
   const base =
-    "group flex items-center gap-4 rounded-xl border border-white/5 bg-white/[0.03] p-2.5 transition-all duration-300";
+    "group flex items-center gap-3 sm:gap-4 rounded-xl border border-white/5 bg-white/[0.03] p-2.5 transition-all duration-300";
   const hover = playable
     ? "hover:border-primary/50 hover:bg-white/[0.06] hover:translate-x-1"
     : "";
@@ -43,7 +46,7 @@ const SongRow = ({ song, index }) => {
   const content = (
     <>
       <span
-        className={`w-8 text-center text-lg font-bold tabular-nums ${
+        className={`w-6 sm:w-8 text-center text-lg font-bold tabular-nums ${
           index < 3 ? "text-primary" : "text-gray-500"
         }`}
       >
@@ -51,10 +54,10 @@ const SongRow = ({ song, index }) => {
       </span>
       <Cover src={song.cover} alt={song.title} playable={playable} />
       <div className="min-w-0 flex-1">
-        <p className="font-semibold truncate group-hover:text-primary transition-colors">
+        <p className="font-semibold leading-snug break-words group-hover:text-primary transition-colors">
           {song.title}
         </p>
-        <p className="text-sm text-gray-400 truncate">{song.artist}</p>
+        <p className="text-sm text-gray-400 break-words">{song.artist}</p>
       </div>
       {playable && (
         <svg

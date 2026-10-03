@@ -161,7 +161,7 @@ const About = () => {
                   juga bisa jadi lebih aktif kalau diperlukan. Hobi saya bermain
                   gitar & futsal (walaupun keduanya belum terlalu jago). Fun
                   fact, saya suka sekali berkendara motor malam-malam tepat
-                  setelah hujan baru reda. Saya menyukai suasana itu, saya juga
+                  setelah hujan baru reda. Saya menyukai suasana itu, saya juga menyukai
                   pemandangan langit malam dan langit menjelang subuh.
                 </p>
               </div>
